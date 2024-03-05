@@ -84,18 +84,13 @@ public class ComputadorController {
     private void computadorBasico (){
         Computador computadorBasico = Computador.builder().procesador(txtProcesador.getText())
                 .discoDuroHdd(txtDiscoDurosHdd.getText()).memoriaRam(txtMemoriaRam.getText()).Builder();
-        txtComputadorCreado.setText("Computador Basico Creado con= Procesador: "
-                + computadorBasico.getProcesador() +", Disco Duro Mecanico: " +computadorBasico.getDiscoDuroHdd()
-                + " GB y Memoria Ram de: "+computadorBasico.getMemoriaRam() + " GB");
+        imprimirComputadorBasico(computadorBasico);
     }
     private void computadorOficina (){
         Computador computadorOficina = Computador.builder().procesador(txtProcesador.getText())
                 .discoDuroHdd(txtDiscoDurosHdd.getText()).memoriaRam(txtMemoriaRam.getText()).discoDuroSsd(
                 txtDiscoDuroSsd.getText()).Builder();
-        txtComputadorCreado.setText("Computador de Oficina Creado con= Procesador: "
-                + computadorOficina.getProcesador() +", Disco Duro Mecanico: " +computadorOficina.getDiscoDuroHdd()
-                +" GB, Dico Duro de Estado Solido: "+computadorOficina.getDiscoDuroSsd() +
-                " y GB, Memoria Ram de: "+computadorOficina.getMemoriaRam() + " GB");
+        imprimirComputadorOficina(computadorOficina);
     }
 
     private void computadorGamer (){
@@ -103,11 +98,24 @@ public class ComputadorController {
                 .discoDuroHdd(txtDiscoDurosHdd.getText()).memoriaRam(txtMemoriaRam.getText()).discoDuroSsd(
                         txtDiscoDuroSsd.getText()).tarjetaGrafica(txtTarjetaGrafica.getText()).monitor(
                         txtMonitor.getText()).Builder();
+        imprimirComputadorGamer(computadorGamer);
+    }
+    private void imprimirComputadorBasico(Computador computadorBasico){
+        txtComputadorCreado.setText("Computador Basico Creado con= Procesador: "
+                + computadorBasico.getProcesador() +", Disco Duro Mecanico: " +computadorBasico.getDiscoDuroHdd()
+                + " GB y Memoria Ram de: "+computadorBasico.getMemoriaRam() + " GB");
+    }
+    private void imprimirComputadorOficina (Computador computadorOficina){
+        txtComputadorCreado.setText("Computador de Oficina Creado con= Procesador: "
+                + computadorOficina.getProcesador() +", Disco Duro Mecanico: " +computadorOficina.getDiscoDuroHdd()
+                +" GB, Dico Duro de Estado Solido: "+computadorOficina.getDiscoDuroSsd() +
+                " y GB, Memoria Ram de: "+computadorOficina.getMemoriaRam() + " GB");
+    }
+    private void imprimirComputadorGamer (Computador computadorGamer){
         txtComputadorCreado.setText("Computador Gamer Creado con= Procesador: "
                 + computadorGamer.getProcesador() +", Disco Duro Mecanico: " +computadorGamer.getDiscoDuroHdd()
                 +" GB, Dico Duro de Estado Solido: "+computadorGamer.getDiscoDuroSsd() +
                 " GB, Memoria Ram de: "+computadorGamer.getMemoriaRam() + " GB, Tarjeta Grafica: "+
                 computadorGamer.getTarjetaGrafica() + " y Monitor de: " +computadorGamer.getMonitor());
     }
-
 }
